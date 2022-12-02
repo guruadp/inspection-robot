@@ -13,3 +13,7 @@ This is the final Project for the Software Development for Robotics (ENPM808X) c
 
 # Sprint 
 https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBabY-E/edit?usp=sharing
+
+# Video
+## Phase 1 video
+https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=sharing
