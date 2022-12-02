@@ -17,3 +17,17 @@ https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBab
 # Video
 ## Phase 1 video
 https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=sharing
+
+# Tools, libraries and dependencies used 
+- C++ 14 
+- ROS2 Humble
+- OpenCV 
+- CMake 
+- Git 
+- Github CI 
+- Coverall
+- Visual Studio Code
+- RViz
+- Gazebo
+- turtlebot
+- ROStest, GTest, GMock 
