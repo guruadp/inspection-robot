@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # inspection-robot
-This is the final Project for the Software Development for Robotics (ENPM808X) course.  
+This is the final Project for the Software Development for Robotics (ENPM808X) course. Turtlebot3 is navigated in a wearhouse to desired locations where items are placed. Each item is identified by the robot using a camera integrated with the robot that detects the ARUCO marker present in the box. Using this the classification of item is performed, and a report is generated to account for the available and the misplaced items. 
 
 # Author
 ## phase -1
