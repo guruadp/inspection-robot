@@ -1,5 +1,6 @@
-![Build Status](https://github.com/guruadp/inspection-robot/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/guruadp/inspection-robot/actions/workflows/build_and_coveralls.yml)
+![Build Status](https://github.com/guruadp/inspection-robot/actions/workflows/build_and_coveralls.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/guruadp/inspection-robot/badge.svg?branch=master)](https://coveralls.io/github/guruadp/inspection-robot?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # inspection-robot
 This is the final Project for the Software Development for Robotics (ENPM808X) course.  
