@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/guruadp/inspection-robot/badge.svg?branch=master)](https://coveralls.io/github/guruadp/inspection-robot?branch=master)
+
 # inspection-robot
 This is the final Project for the Software Development for Robotics (ENPM808X) course.  
 
