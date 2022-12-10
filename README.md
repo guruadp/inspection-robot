@@ -6,10 +6,15 @@
 This is the final Project for the Software Development for Robotics (ENPM808X) course. Turtlebot3 is navigated in a wearhouse to desired locations where items are placed. Each item is identified by the robot using a camera integrated with the robot that detects the ARUCO marker present in the box. Using this the classification of item is performed, and a report is generated to account for the available and the misplaced items. 
 
 # Author
-## phase -1
-### Dhanush Babu Allam (Driver)
-### Guru ADP (Navigator)
-### Vignesh RR (Design Keeper)
+## Phase 1
+- Dhanush Babu Allam (Driver)
+- Guru Nandhan A D P (Navigator)
+- Vignesh RR (Design Keeper)
+
+## Phase 2
+- Guru Nandhan A D P (Driver)
+- Vignesh RR (Navigator)
+- Dhanush Babu Allam (Design Keeper)
 
 # Sprint 
 https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBabY-E/edit?usp=sharing
@@ -20,7 +25,7 @@ https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=shari
 
 # Tools, libraries and dependencies used 
 - C++ 14 
-- ROS2 Humble
+- ROS Noetic
 - OpenCV 
 - CMake 
 - Git 
