@@ -44,7 +44,7 @@ jobs:
       # Compile and executables
       - name: Build Coverage
         working-directory: ${{github.workspace}}/build
-        run: catkin_make
+        run: cmake
 
       # Run test suite and compute code coverage
       - name: Run Test Coverage
