@@ -36,3 +36,81 @@ https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=shari
 - Gazebo
 - turtlebot
 - ROStest, GTest, GMock 
+
+
+## Phase 2 progress
+
+## Turtlebot3
+
+Install Turtlbot3
+```
+cd ~/<workspace_name>/src/
+git clone -b galactic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+cd  ..
+colcon build
+```
+
+Open bashrc file
+```
+cd gedit ~/.bashrc
+```
+Add the below command in .bashrc file
+```
+export TURTLEBOT3_MODEL=waffle_pi
+```
+
+To check 
+```
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch
+```
+
+## Run project
+
+Setting up workspace and build package
+```
+mkdir -p <workspace_name>/src
+cd <workspace_name>/src
+git clone https://github.com/guruadp/inspection-robot.git
+source /opt/ros/galactic/setup.bash
+cd ..
+colcon build --packages-select inspection-robot
+. install/setup.bash
+```
+
+Running package
+```
+ros2 launch inspection-robot inspection.launch.py
+```
+
+Open another terminal
+```
+source /opt/ros/galactic/setup.bash
+ros2 run inspection-robot moving_robot
+```
+
+## Building for test coverage
+
+```
+cd <workspace_name>
+rm -rf build/inspection-robot/
+colcon build --cmake-args -DCOVERAGE=1 --packages-select inspection-robot
+cat log/latest_build/inspection-robot/stdout_stderr.log
+```
+
+## Run test
+```
+colcon test --packages-select inspection-robot
+cat log/latest_test/inspection-robot/stdout_stderr.log
+```
+
+## Generate code coverage report
+```
+ros2 run inspection-robot generate_coverage_report.bash
+```
+
+To open the codecoverage report
+
+```
+cd <workspace_name>
+firefox /install/inspection-robot/coverage/index.html
+```
