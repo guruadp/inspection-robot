@@ -36,7 +36,13 @@ jobs:
       # Install some system pacakges
       - name: Install packages
         run: sudo apt install -y lcov
-
+        
+      # Build for test coverage
+      - name: Configure CMake flags and build exectables
+        run: 
+          source /opt/ros/galactic/setup.bash
+          colcon build --packages-select inspection-robot
+          
       # Run CMake to setup compilation flags
       # - name: Configure Coverage CMake 
         # run: cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug -B ${{github.workspace}}/build 
