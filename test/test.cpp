@@ -46,9 +46,4 @@ TEST_F(TaskPublisher, test_num_publishers) {
   EXPECT_EQ(1, static_cast<int>(pub_count));
 }
 
-TEST_F(TaskPublisher, test_num_publishers) {
-  test_node_ = rclcpp::Node::make_shared("test_sub");
-  auto pub_count = test_node_->count_publishers("move_turtlebot");
-  EXPECT_EQ(1, static_cast<int>(pub_count));
-}
 
