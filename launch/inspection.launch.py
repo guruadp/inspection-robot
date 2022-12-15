@@ -34,10 +34,11 @@ def generate_launch_description():
     y_pose = LaunchConfiguration('y_pose', default='0.0')
 
     world = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('inspection-robot'),
         'worlds',
-        'empty_world.world'
+        'inspection.world'
     )
+    print(world)
 
     gzserver_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -52,12 +53,12 @@ def generate_launch_description():
         )
     )
 
-    robot_state_publisher_cmd = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            os.path.join(launch_file_dir, 'robot_state_publisher.launch.py')
-        ),
-        launch_arguments={'use_sim_time': use_sim_time}.items()
-    )
+    # robot_state_publisher_cmd = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource(
+    #         os.path.join(launch_file_dir, 'robot_state_publisher.launch.py')
+    #     ),
+    #     launch_arguments={'use_sim_time': use_sim_time}.items()
+    # )
 
     spawn_turtlebot_cmd = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
@@ -74,7 +75,7 @@ def generate_launch_description():
     # Add the commands to the launch description
     ld.add_action(gzserver_cmd)
     ld.add_action(gzclient_cmd)
-    ld.add_action(robot_state_publisher_cmd)
+    # ld.add_action(robot_state_publisher_cmd)
     ld.add_action(spawn_turtlebot_cmd)
 
     return ld
