@@ -15,16 +15,21 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/string.hpp"
+#include <opencv2/aruco.hpp>
+#include <iostream>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 using std::placeholders::_1;
 
-class MinimalSubscriber : public rclcpp::Node
+class Detection : public rclcpp::Node
 {
   public:
-    MinimalSubscriber()
+    Detection()
     : Node("image_subscriber")
     {
       subscription_ = this->create_subscription<sensor_msgs::msg::Image>(
-      "/camera/image_raw", 10, std::bind(&MinimalSubscriber::topic_callback, this, _1));
+      "/camera/image_raw", 10, std::bind(&Detection::topic_callback, this, _1)); 
+
     }
 
   private:
@@ -33,8 +38,20 @@ class MinimalSubscriber : public rclcpp::Node
    cv_bridge::CvImagePtr cv_ptr;
 
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
-     if (cv_ptr->image.rows > 60 && cv_ptr->image.cols > 60)
-      cv::circle(cv_ptr->image, cv::Point(50, 50), 10, CV_RGB(255,0,0));
+
+    // cv::Mat img = cv::imread("/home/vignesh/Downloads/aruco_marker.png");
+    cv::Ptr<cv::aruco::Dictionary> dict = cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
+    int i=0;
+    int count[25];
+   std::vector<std::vector<cv::Point2f>> corners;
+   std::vector<int> ids;
+   cv::aruco::detectMarkers(cv_ptr,dict,corners,ids);
+   if(ids.size()>0)
+   cv::aruco::drawDetectedMarkers(cv_ptr,corners,ids);
+  // cv::namedWindow("out",0);
+    cv::resize(cv_ptr, cv_ptr, cv::Size(cv_ptr.cols/3, cv_ptr.rows/3)); 
+    //cv::namedWindow( "Display frame", cv::WindowFlags::WINDOW_AUTOSIZE);
+   cv::imshow("out",cv_ptr);
    
     }
     rclcpp::Subscription<sensor_msgs::msg::Image>::SharedPtr subscription_;
@@ -44,7 +61,7 @@ class MinimalSubscriber : public rclcpp::Node
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<MinimalSubscriber>());
+  rclcpp::spin(std::make_shared<Detection>());
   rclcpp::shutdown();
   return 0;
 }
