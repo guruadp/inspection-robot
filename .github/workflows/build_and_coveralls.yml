@@ -33,7 +33,7 @@ jobs:
       # We want to use GitHub CI checkout version 3 for checking out the branch
       - uses: actions/checkout@v3
       
-    # Install some system pacakges
+    # Install some system packages
           - name: Install ROS 2 Galactic packages
             run: |
               locale  
@@ -60,7 +60,17 @@ jobs:
               source /opt/ros/galactic/setup.bash
 
               sudo apt install -y lcov
-        
+
+        # Install Open CV and dependencies
+          - name: Install OpenCV and dependencies
+            run: |
+              sudo apt install -y g++ cmake make git libgtk2.0-dev pkg-config
+              git clone https://github.com/opencv/opencv.git
+              mkdir -p build && cd build
+              cmake ../opencv
+              make -j4
+              sudo make install
+              
       # Build for test coverage
       - name: Building package
         run: 
