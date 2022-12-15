@@ -9,6 +9,12 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
+INCLUDE_DIRECTORIES( ${OpenCV_INCLUDE_DIRS} )
+
+find_package(image_transport REQUIRED)
 
 install(DIRECTORY
 	launch
@@ -18,8 +24,12 @@ install(DIRECTORY
 add_executable(moving_robot src/moving_robot.cpp)
 ament_target_dependencies(moving_robot rclcpp geometry_msgs)
 
+add_executable(image_converter src/image_converter.cpp)
+ament_target_dependencies(image_converter rclcpp sensor_msgs cv_bridge image_transport)
+
 install(TARGETS
   moving_robot
+  image_converter
   DESTINATION lib/${PROJECT_NAME}/
 )
 
