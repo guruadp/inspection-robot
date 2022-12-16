@@ -22,8 +22,8 @@
 
 /**
  * @file moving_robot.cpp
- * @author Guru Nandhan A D P(guruadp@umd.edu)
- * @brief this makes the robot to follow a circular path
+ * @author Guru Nandhan A D P(guruadp@umd.edu), Dhanush Babu Allam (dallam@umd.edu), Vignesh RR (vignesh31794@umd.edu)
+ * @brief This navigates the robot to the desired location
  * @version 0.1
  * @date 2022-12-07
  *

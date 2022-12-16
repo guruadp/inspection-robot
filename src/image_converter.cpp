@@ -20,6 +20,16 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 // DEALINGS IN THE SOFTWARE.
 
+/**
+ * @file image_converter.cpp
+ * @author Guru Nandhan A D P(guruadp@umd.edu), Dhanush Babu Allam (dallam@umd.edu), Vignesh RR (vignesh31794@umd.edu)
+ * @brief This detects the aruco marker
+ * @version 0.1
+ * @date 2022-12-15
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include <memory>
 
 #include "rclcpp/rclcpp.hpp"
