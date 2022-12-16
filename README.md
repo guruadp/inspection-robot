@@ -29,7 +29,7 @@ https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBab
 https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=sharing
 
 # Presentation
-## Pase 3 Video
+## Phase 3 Video
 https://docs.google.com/presentation/d/1EJEmD1B4Bu8JoqJP8fsrnUJ7H9YMx_E5Tci192NI_EE/edit?usp=sharing
 
 # Tools, libraries and dependencies used 
