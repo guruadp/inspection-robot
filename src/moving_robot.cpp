@@ -22,7 +22,8 @@
 
 /**
  * @file moving_robot.cpp
- * @author Guru Nandhan A D P(guruadp@umd.edu), Dhanush Babu Allam (dallam@umd.edu), Vignesh RR (vignesh31794@umd.edu)
+ * @author Guru Nandhan A D P(guruadp@umd.edu), Dhanush Babu Allam
+ * (dallam@umd.edu), Vignesh RR (rr94@umd.edu)
  * @brief This navigates the robot to the desired location
  * @version 0.1
  * @date 2022-12-07
@@ -34,8 +35,8 @@
 #include <functional>
 #include <memory>
 
-#include "rclcpp/rclcpp.hpp"
 #include "geometry_msgs/msg/twist.hpp"
+#include "rclcpp/rclcpp.hpp"
 
 using namespace std::chrono_literals;
 
@@ -52,11 +53,15 @@ class MovingRobot : public rclcpp::Node {
   }
 
  private:
+  /**
+   * @brief Function to move the turtlebot
+   *
+   */
   void timer_callback() {
     int i = 1;
     auto message = geometry_msgs::msg::Twist();
-   // message.linear.x=0.0;
-    while (i<=2){
+    // message.linear.x=0.0;
+    while (i <= 2) {
       message.linear.x = 0.1;
       // message.angular.z = 0.3;
       RCLCPP_INFO(this->get_logger(), "Publishing: '%f.2' and %f.2",
@@ -66,7 +71,6 @@ class MovingRobot : public rclcpp::Node {
     }
     message.linear.x = 0.0;
     publisher_->publish(message);
-
   }
   rclcpp::TimerBase::SharedPtr timer_;
   rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_;
