@@ -14,7 +14,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(OpenCV REQUIRED)
 INCLUDE_DIRECTORIES( ${OpenCV_INCLUDE_DIRS} )
 
-find_package(image_transport REQUIRED)
+# find_package(image_transport REQUIRED)
 
 install(DIRECTORY
 	launch
@@ -26,7 +26,7 @@ ament_target_dependencies(moving_robot rclcpp geometry_msgs)
 
 add_executable(image_converter src/image_converter.cpp)
 # ament_target_dependencies(image_converter rclcpp sensor_msgs cv_bridge image_transport std_msgs)
-ament_target_dependencies(image_converter rclcpp sensor_msgs image_transport std_msgs)
+ament_target_dependencies(image_converter rclcpp sensor_msgs std_msgs)
 
 install(TARGETS
   moving_robot
