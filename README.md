@@ -16,12 +16,21 @@ This is the final Project for the Software Development for Robotics (ENPM808X) c
 - Vignesh RR (Navigator)
 - Dhanush Babu Allam (Design Keeper)
 
+## Phase 3
+- Vignesh RR (Driver)
+- Dhanush Babu Allam (Navigator)
+- Guru Nandhan A D P (Design Keeper)
+
 # Sprint 
 https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBabY-E/edit?usp=sharing
 
 # Video
 ## Phase 1 video
 https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=sharing
+
+# Presentation
+## Phase 3 Video
+https://docs.google.com/presentation/d/1EJEmD1B4Bu8JoqJP8fsrnUJ7H9YMx_E5Tci192NI_EE/edit?usp=sharing
 
 # Tools, libraries and dependencies used 
 - C++ 14 

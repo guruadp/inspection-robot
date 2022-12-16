@@ -18,11 +18,11 @@ name: Build
 on:
   # Triggered whenever push to the main branch
   push:
-    branches: [ "main" ]
+    branches: [ "master" ]
 
   # Triggered whenever a pull request is created on main
   pull_request:
-    branches: [ "main" ]
+    branches: [ "master" ]
     types: [opened]
 
   # Allow manual trigger
@@ -32,7 +32,7 @@ jobs:
   build:
     # Create a container of the latest Ubuntu, other values could be
     # ubuntu-latest, ubuntu-22.04, etc.
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     
     steps:
       # We want to use GitHub CI checkout version 3 to check out our branch

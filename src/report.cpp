@@ -1,6 +1,6 @@
 // MIT License
 
-// Copyright (c) 2022 Guru Nandhan A D P, Dhanus Babu Allaam, Vignesh RR
+// Copyright (c) 2022 Guru Nandhan A D P
 
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -21,12 +21,12 @@
 // DEALINGS IN THE SOFTWARE.
 
 /**
- * @file moving_robot.cpp
+ * @file report.cpp
  * @author Guru Nandhan A D P(guruadp@umd.edu), Dhanush Babu Allam
  * (dallam@umd.edu), Vignesh RR (rr94@umd.edu)
- * @brief This navigates the robot to the desired location
+ * @brief This is to report the aruco marker detection
  * @version 0.1
- * @date 2022-12-07
+ * @date 2022-12-15
  *
  * @copyright Copyright (c) 2022
  *
@@ -43,33 +43,28 @@ using namespace std::chrono_literals;
 /* This example creates a subclass of Node and uses std::bind() to register a
  * member function as a callback from the timer. */
 
-class MovingRobot : public rclcpp::Node {
+/**
+ * @brief The class for preparing report
+ *
+ */
+class Report : public rclcpp::Node {
  public:
-  MovingRobot() : Node("move_turtlebot"), count_(0) {
+  Report() : Node("reporting"), count_(0) {
     publisher_ =
-        this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
-    timer_ = this->create_wall_timer(
-        500ms, std::bind(&MovingRobot::timer_callback, this));
+        this->create_publisher<geometry_msgs::msg::Twist>("chatter", 10);
+    timer_ = this->create_wall_timer(500ms,
+                                     std::bind(&Report::timer_callback, this));
   }
 
  private:
   /**
-   * @brief Function to move the turtlebot
+   * @brief function to publish any data
    *
    */
   void timer_callback() {
-    int i = 1;
-    auto message = geometry_msgs::msg::Twist();
-    // message.linear.x=0.0;
-    while (i <= 2) {
-      message.linear.x = 0.1;
-      // message.angular.z = 0.3;
-      RCLCPP_INFO(this->get_logger(), "Publishing: '%f.2' and %f.2",
-                  message.linear.x, message.angular.z);
-      publisher_->publish(message);
-      i++;
-    }
-    message.linear.x = 0.0;
+    auto message = "Aruco ID detection";
+    // int id=10;
+    RCLCPP_INFO(this->get_logger(), "Publishing the message : ", message);
     publisher_->publish(message);
   }
   rclcpp::TimerBase::SharedPtr timer_;
@@ -79,7 +74,7 @@ class MovingRobot : public rclcpp::Node {
 
 int main(int argc, char *argv[]) {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<MovingRobot>());
+  rclcpp::spin(std::make_shared<Report>());
   rclcpp::shutdown();
   return 0;
 }
