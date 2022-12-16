@@ -13,7 +13,9 @@ name: Build
 on:
   # Triggered whenever push to the master branch
   push:
-    branches: ["Phase-3"]
+      branches:
+        - master
+        - Phase-3
 
   # Triggered whenever a pull request is created on master
   pull_request:
