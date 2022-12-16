@@ -38,13 +38,11 @@
 #include <string>
 
 #include "rclcpp/logger.hpp"
-#include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/image.hpp"
 #include "std_msgs/msg/string.hpp"
 
 using namespace std::chrono_literals;
 
-#include <memory>
 #include <opencv2/opencv.hpp>
 
 #include "cv_bridge/cv_bridge.h"
@@ -57,7 +55,6 @@ using namespace std::chrono_literals;
 #include <opencv2/imgproc/imgproc.hpp>
 
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/string.hpp"
 using std::placeholders::_1;
 /**
  * @brief The Detection class is used to subscribe to sensor message and then
@@ -89,16 +86,16 @@ class Detection : public rclcpp::Node {
    * turtlebot
    */
   void topic_callback(const sensor_msgs::msg::Image::SharedPtr msg) const {
-    cv_bridge::CvImagePtr cv_ptr;
+    // cv_bridge::CvImagePtr cv_ptr;
     // cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
 
     // cv::Mat img = cv::imread("/home/vignesh/Downloads/aruco_marker.png");
-    cv::Ptr<cv::aruco::Dictionary> dict =
-        cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
-    int i = 0;
-    int count[25];
-    std::vector<std::vector<cv::Point2f>> corners;
-    std::vector<int> ids;
+    // cv::Ptr<cv::aruco::Dictionary> dict =
+    //    cv::aruco::getPredefinedDictionary(cv::aruco::DICT_6X6_250);
+   // int i = 0;
+    //int count[25];
+    //std::vector<std::vector<cv::Point2f>> corners;
+    //std::vector<int> ids;
     // cv::aruco::detectMarkers(cv_ptr,dict,corners,ids);
     //  if(ids.size()>0)
     //  cv::aruco::drawDetectedMarkers(cv_ptr,corners,ids);
