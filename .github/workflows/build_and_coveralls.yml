@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v3
 
       # Install some system pacakges
-      - name: Install ROS 2 Humble packages
+      - name: Install ROS 2 galactic packages
         run: |
           sudo apt update
           sudo apt install -y software-properties-common
@@ -50,19 +50,19 @@ jobs:
             $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
             | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
           sudo apt update
-          sudo apt install -y ros-humble-ros-base python3-colcon-common-extensions
+          sudo apt install -y ros-galactic-ros-base python3-colcon-common-extensions
           sudo apt install -y lcov
       # Build for test coverage
       - name: Configure CMake flags and build exectables
         run: |
-          source /opt/ros/humble/setup.bash
+          source /opt/ros/galactic/setup.bash
           colcon build --cmake-args -DCOVERAGE=1 --packages-select inspection-robot
           cat log/latest_build/inspection-robot/stdout_stderr.log
           find build/inspection-robot/ | grep -E 'gcno' # catch error -- exepct to see .gcno files
       # Run unit test and also check c++ code (and others) for style and static coding errors
       - name: Run unit test and check code error
         run: |
-          source /opt/ros/humble/setup.bash
+          source /opt/ros/galactic/setup.bash
           colcon test --packages-select inspection-robot
           cat log/latest_test/inspection-robot/stdout_stderr.log
           find build/inspection-robot/ | grep -E 'gcda' # catch error -- expect to see .gcda files
