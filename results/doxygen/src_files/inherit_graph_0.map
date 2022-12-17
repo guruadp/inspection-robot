@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,61,83"/>
+<area shape="rect" id="node2" href="$class_detection.html" title="The Detection class is used to subscribe to sensor message and then publish the report." alt="" coords="121,5,206,32"/>
+<area shape="rect" id="node3" href="$class_moving_robot.html" title=" " alt="" coords="109,56,217,83"/>
+<area shape="rect" id="node4" href="$class_report.html" title="The class for preparing report." alt="" coords="131,107,196,133"/>
+</map>

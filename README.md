@@ -3,7 +3,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # inspection-robot
-This is the final Project for the Software Development for Robotics (ENPM808X) course. Turtlebot3 is navigated in a wearhouse to desired locations where items are placed. Each item is identified by the robot using a camera integrated with the robot that detects the ARUCO marker present in the box. Using this the classification of item is performed, and a report is generated to account for the available and the misplaced items. 
+
+## Overview and Description
+This is the final Project for the Software Development for Robotics (ENPM808X) course. Turtlebot3 is navigated in a warehouse to desired locations where items are placed. Each item is identified by the robot using a camera integrated with the robot that detects the ARUCO marker present in the box. Using this the classification of items is performed, and a report is generated to account for the available and the misplaced items.
 
 # Author
 ## Phase  1
@@ -21,7 +23,7 @@ This is the final Project for the Software Development for Robotics (ENPM808X) c
 - Dhanush Babu Allam (Navigator)
 - Guru Nandhan A D P (Design Keeper)
 
-# Sprint 
+# Sprint
 https://docs.google.com/spreadsheets/d/1A0Pc2_M6MppBpWuW0mJaRoHsq_wDIXbxwaVrvBabY-E/edit?usp=sharing
 
 # Video
@@ -32,19 +34,49 @@ https://drive.google.com/file/d/1sNx6R_Ter5Cd_EBcwtlR65Pktl6iZPkA/view?usp=shari
 ## Phase 3 Video
 https://docs.google.com/presentation/d/1EJEmD1B4Bu8JoqJP8fsrnUJ7H9YMx_E5Tci192NI_EE/edit?usp=sharing
 
-# Tools, libraries and dependencies used 
-- C++ 14 
+# Tools, libraries and dependencies used and its installation steps
+- C++ 14
 - ROS Galactic
-- OpenCV 
-- CMake 
-- Git 
-- Github CI 
+```
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository universe
+sudo apt update && sudo apt install -y curl
+sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
+  -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
+  http://packages.ros.org/ros2/ubuntu \
+  $(. /etc/os-release && echo $UBUNTU_CODENAME) main" \
+  | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+sudo apt update
+sudo apt install -y ros-galactic-ros-base python3-colcon-common-extensions
+```
+- OpenCV
+```
+sudo apt install -y g++ cmake make git libgtk2.0-dev pkg-config
+git clone https://github.com/opencv/opencv.git
+mkdir -p build && cd build
+cmake ../opencv
+make -j4
+sudo make install
+```
+- CMake
+- Git
+```
+sudo apt-get install git-all
+```
+- Github CI
 - Coverall
-- Visual Studio Code
+```
+sudo apt install -y lcov
+```
+- Visual Studio Code (https://code.visualstudio.com/download)
+
 - RViz
 - Gazebo
-- turtlebot
-- ROStest, GTest, GMock 
+- turtlebot3
+- ROStest, GTest, GMock
 
 
 ## Phase 2 progress
@@ -68,7 +100,7 @@ Add the below command in .bashrc file
 export TURTLEBOT3_MODEL=waffle_pi
 ```
 
-To check 
+To check
 ```
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch
 ```

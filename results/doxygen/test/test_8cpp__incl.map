@@ -1,0 +1,7 @@
+<map id="test.cpp" name="test.cpp">
+<area shape="rect" id="node1" title="This navigates the robot to the desired location." alt="" coords="195,5,269,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,80,109,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="134,80,205,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="229,80,361,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="385,80,607,107"/>
+</map>
