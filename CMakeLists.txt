@@ -26,7 +26,7 @@ ament_target_dependencies(moving_robot rclcpp geometry_msgs)
 
 add_executable(image_converter src/image_converter.cpp)
 # ament_target_dependencies(image_converter rclcpp sensor_msgs cv_bridge image_transport std_msgs)
-ament_target_dependencies(image_converter rclcpp sensor_msgs std_msgs)
+ament_target_dependencies(image_converter rclcpp sensor_msgs std_msgs OpenCV)
 
 install(TARGETS
   moving_robot

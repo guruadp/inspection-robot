@@ -47,7 +47,7 @@ using namespace std::chrono_literals;
 
 // #include <sensor_msgs/msg/image_encodings.h>
 #include <iostream>
-#include <opencv2/aruco.hpp>
+// #include <opencv2/aruco.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/imgproc.hpp>
