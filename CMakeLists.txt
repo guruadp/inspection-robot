@@ -38,8 +38,8 @@ if(COVERAGE)
   set(CMAKE_BUILD_TYPE "Debug")
   set(CMAKE_CXX_FLAGS "--coverage")
   set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE "ON")
-  set(ARG_CONFIG_FILE "${PROJECT_SOURCE_DIR}/uncrustify_google_cpp_allman.cfg"
-    CACHE STRING "uncrustify config file")
+ # set(ARG_CONFIG_FILE "${PROJECT_SOURCE_DIR}/uncrustify_google_cpp_allman.cfg"
+#  CACHE STRING "uncrustify config file")
 endif()
 
 # if(BUILD_TESTING)
@@ -60,14 +60,18 @@ if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
   # comment the line when a copyright and license is added to all source files
-  # - commented -- set(ament_cmake_copyright_FOUND TRUE)
+  set(ament_cmake_copyright_FOUND TRUE)
   # the following line skips cpplint (only works in a git repo)
   # comment the line when this package is in a git repo and when
   # a copyright and license is added to all source files
-  # - commented --  set(ament_cmake_cpplint_FOUND TRUE)
+  set(ament_cmake_cpplint_FOUND TRUE)
   # the following lines skip flake8 check
-  # - commented -- set(ament_cmake_flake8_FOUND TRUE)
-   ament_lint_auto_find_test_dependencies()
+  set(ament_cmake_flake8_FOUND TRUE)
+  set(ament_cmake_lint_cmake_FOUND TRUE)
+  set(ament_cmake_uncrustify_FOUND TRUE)
+  set(ament_cmake_xmllint_FOUND TRUE)
+
+  ament_lint_auto_find_test_dependencies()
 
   # Add a gtest executable
   set(TESTFILES
