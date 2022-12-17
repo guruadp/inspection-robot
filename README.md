@@ -1,5 +1,5 @@
 ![Build Status](https://github.com/guruadp/inspection-robot/actions/workflows/build_and_coveralls.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/guruadp/inspection-robot/badge.svg?branch=master)](https://coveralls.io/github/guruadp/inspection-robot?branch=master)
+[![codecov](https://codecov.io/gh/guruadp/inspection-robot/branch/master/graph/badge.svg?token=0C30FZ9SC6)](https://codecov.io/gh/guruadp/inspection-robot)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 # inspection-robot
