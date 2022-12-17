@@ -52,12 +52,6 @@ jobs:
           sudo apt update
           sudo apt install -y ros-galactic-ros-base python3-colcon-common-extensions
           sudo apt install -y lcov
-          sudo apt install -y g++ cmake make git libgtk2.0-dev pkg-config
-          git clone https://github.com/opencv/opencv.git
-          mkdir -p build && cd build
-          cmake ../opencv
-          make -j4
-          sudo make install
 
       # # Install Open CV and dependencies
       #    - name: Install OpenCV and dependencies
